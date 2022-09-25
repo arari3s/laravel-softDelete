@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\TrashController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
+
+Route::resource('teacher', TeacherController::class);
+
+Route::get('trash', [TrashController::class, 'index'])->name('trash.index');
+Route::get('trash/restore/{id}', [TrashController::class, 'restore'])->name('trash.restore');
