@@ -22,3 +22,4 @@ Route::resource('teacher', TeacherController::class);
 
 Route::get('trash', [TrashController::class, 'index'])->name('trash.index');
 Route::get('trash/restore/{id}', [TrashController::class, 'restore'])->name('trash.restore');
+Route::get('trash/permanently/{id}', [TrashController::class, 'delete_permanently'])->name('trash.permanently');
